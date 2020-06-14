@@ -6,7 +6,10 @@ def index(request):
     return HttpResponse("Hello World!")
 
 def hello(request, name):
-    return HttpResponse(f"Hello {name}")
+    return render(
+        request, "firstapp/hello.html", {
+            "name": name
+        })
 
 def html(request):
     return render(
